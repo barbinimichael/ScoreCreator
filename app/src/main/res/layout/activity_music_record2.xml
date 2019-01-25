@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.scorecreator.MusicRecord2">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            app:srcCompat="@mipmap/multicolor" />
+
+        <com.example.scorecreator.WaveformView
+            android:id="@+id/waveform_view"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_above="@+id/TopRec"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="15dp" />
+
+        <ImageView
+            android:id="@+id/Center"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/circle_button" />
+
+        <ImageView
+            android:id="@+id/RightRec"
+            android:layout_width="50dp"
+            android:layout_height="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/Center"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:srcCompat="@android:color/holo_orange_dark"
+            tools:layout_editor_absoluteY="326dp" />
+
+        <ImageView
+            android:id="@+id/LeftRec"
+            android:layout_width="50dp"
+            android:layout_height="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/Center"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:srcCompat="@android:color/holo_orange_dark"
+            tools:layout_editor_absoluteY="326dp" />
+
+        <ImageView
+            android:id="@+id/BottomRec"
+            android:layout_width="10dp"
+            android:layout_height="50dp"
+            android:layout_alignStart="@+id/TopRec"
+            android:layout_below="@+id/Center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:color/holo_orange_dark"
+            tools:layout_editor_absoluteX="54dp" />
+
+        <ImageView
+            android:id="@+id/TopRec"
+            android:layout_width="10dp"
+            android:layout_height="50dp"
+            android:layout_above="@+id/Center"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@android:string/untitled"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:srcCompat="@android:color/holo_orange_dark"
+            tools:layout_editor_absoluteY="244dp" />
+
+        <TextView
+            android:id="@+id/NoteText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textSize="100sp" />
+
+        <TextView
+            android:id="@+id/PredictionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/waveform_view"
+            android:layout_alignStart="@+id/LeftRec"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/START_RECORDING"
+            android:layout_width="172dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_column="0"
+            android:layout_marginBottom="68dp"
+            android:layout_row="0"
+            android:onClick="startRecording"
+            android:text="START"
+            tools:layout_editor_absoluteX="128dp"
+            tools:layout_editor_absoluteY="100dp" />
+
+    </RelativeLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/STOP_RECORDING"
+            android:layout_width="172dp"
+            android:layout_alignParentBottom="true"
+            android:layout_column="0"
+            android:layout_marginBottom="12dp"
+            android:layout_row="1"
+            android:layout_toEndOf="@+id/BottomRec"
+            android:onClick="stopRecording"
+            android:text="STOP"
+            tools:layout_editor_absoluteX="88dp"
+            tools:layout_editor_absoluteY="292dp" />
+
+    </GridLayout>
+
+</android.support.constraint.ConstraintLayout>
